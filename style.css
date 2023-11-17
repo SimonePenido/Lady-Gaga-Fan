@@ -70,7 +70,7 @@ main {
 }
 
 .content {
-  width: min(30vw,400px);
+  width: min(30vw,350px);
   position: absolute;
   top: 50%;
   left: 3rem;
@@ -82,15 +82,20 @@ main {
   display: none;
   text-align: justify;
 
+
   & .title {
     font-family: 'arial-black', sans-serif;
     text-transform: uppercase;
+    padding: 0.3em;
   }
 
   & .description {
-    line-height: 1.7;
+    line-height: 1.5;
     margin: 1rem 0 1.5rem;
     font-size: 0.9rem;
+    background-color:rgba(0, 0, 0, 0.4);
+    border-radius: 0.45rem;
+    padding: 0.3em 0.5em;
   }
 
 
@@ -107,7 +112,8 @@ main {
   }
 
   & button:hover {
-    background-color: rgba(255,255,255,0.1);
+    background-color: rgba(170, 170, 6, 0.493);
+    color: #000;
   }
 
   & a {
@@ -162,7 +168,7 @@ main {
     cursor: pointer;
 
     &:hover {
-      background-color: rgba(255, 255, 255, 0.171);
+      background-color: rgba(170, 170, 6, 0.493);
     }
   }
 
@@ -172,7 +178,7 @@ main {
   .content {
     & .title        { font-size: 1.1rem; }
     & .description  { font-size: 0.8rem; }
-    & button        { font-size: 0.8rem; }
+    & button        { font-size: 0.9rem; }
   }
   .item {
     width: 160px;
