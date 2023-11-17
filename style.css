@@ -1,0 +1,253 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+  letter-spacing: 0.9px;
+}
+
+.item {
+  width: 200px;
+  height: 300px;
+  list-style-type: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  background-position: center;
+  background-size: cover;
+  border-radius: 20px;
+  box-shadow: 0 20px 30px rgba(255,255,255,0.3) inset;
+  transition: transform 0.1s, left 0.75s, top 0.75s, width 0.75s, height 0.75s;
+
+    &:nth-child(1), &:nth-child(2) {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transform: none;
+    border-radius: 0;
+    box-shadow: none;
+    opacity: 1;
+    background: -moz-linear-gradient();
+  }
+
+  &:nth-child(3) { left: 50%; opacity: 0.4;}
+  &:nth-child(4) { left: calc(50% + 220px); opacity: 0.6 }
+  &:nth-child(5) { left: calc(50% + 440px); opacity: 0.7 }
+  &:nth-child(6) { left: calc(50% + 440px); }
+  &:nth-child(7) { left: calc(50% + 440px); }
+  &:nth-child(8) { left: calc(50% + 440px); }
+  &:nth-child(9) { left: calc(50% + 440px); }
+  &:nth-child(10) { left: calc(50% + 440px); }
+  &:nth-child(11) { left: calc(50% + 440px); }
+  &:nth-child(12) { left: calc(50% + 440px); }
+  &:nth-child(13) { left: calc(50% + 440px); }
+  &:nth-child(14) { left: calc(50% + 440px); }
+  &:nth-child(15) { left: calc(50% + 440px); }
+  &:nth-child(16) { left: calc(50% + 440px); }
+  &:nth-child(17) { left: calc(50% + 440px); }
+  &:nth-child(18) { left: calc(50% + 440px); }
+  &:nth-child(19) { left: calc(50% + 440px); }
+  &:nth-child(20) { left: calc(50% + 440px); }
+  &:nth-child(21) { left: calc(50% + 440px); }
+  &:nth-child(22) { left: calc(50% + 440px); }
+  &:nth-child(23) { left: calc(50% + 440px); }
+  &:nth-child(24) { left: calc(50% + 660px); opacity: 0; }
+}
+
+.content {
+  width: min(30vw,400px);
+  position: absolute;
+  top: 50%;
+  left: 3rem;
+  transform: translateY(-50%);
+  font: 500 0.85rem helvetica,sans-serif;
+  color: rgb(247, 247, 199);
+  text-shadow: #000 -1px -1px 0, #000 1px -1px 0, #000 -1px 1px 0, #000 1px 1px 0;
+  opacity: 0;
+  display: none;
+  text-align: justify;
+
+  & .title {
+    font-family: 'arial-black', sans-serif;
+    text-transform: uppercase;
+  }
+
+  & .description {
+    line-height: 1.7;
+    margin: 1rem 0 1.5rem;
+    font-size: 0.9rem;
+  }
+
+
+  & button {
+    width: fit-content;
+    background-color: rgba(0, 0, 0, 0.336);
+    color: rgb(247, 247, 199);
+    border: 3px solid white;
+    border-radius: 0.45rem;
+    padding: 0.75rem;
+    cursor: pointer;
+    margin-top: 1em;
+    letter-spacing: 0.9px;
+  }
+
+  & button:hover {
+    background-color: rgba(255,255,255,0.1);
+  }
+
+  & a {
+    text-decoration: none;
+    color: white;
+  }
+
+  & li {
+    list-style-type: none;
+    margin: 0.4rem 0;
+    font-size: 0.9rem;
+  }
+}
+
+/* 
+  Animação que exibe o conteúdo do segundo item.
+  */
+.item:nth-of-type(2) .content {
+  display: block;
+  animation: show 0.75s ease-in-out 0.3s forwards;
+}
+
+/* Animação keyframes "show" que aplica um efeito de desfoque e movimento para cima em um elemento, seguido de uma transição para opacidade total. */
+
+@keyframes show {
+  0% {
+    filter: blur(5px);
+    transform: translateY(calc(-50% + 75px));
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.nav {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  user-select: none;
+  font: 1em sans-serif;
+
+  & .btn {
+    background-color: rgba(49, 48, 48, 0.7);
+    color: rgba(241, 241, 130, 0.699);
+    border: 3px solid rgba(245, 245, 152, 0.6);
+    margin: 0 0.45rem;
+    padding: 1.5rem;
+    border-radius: 40%;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.171);
+    }
+  }
+
+}
+
+@media (width > 650px) and (width < 900px) {
+  .content {
+    & .title        { font-size: 1.1rem; }
+    & .description  { font-size: 0.8rem; }
+    & button        { font-size: 0.8rem; }
+  }
+  .item {
+    width: 160px;
+    height: 270px;
+
+    
+
+    &:nth-child(3) { left: 50%; }
+    &:nth-child(4) { left: calc(50% + 170px); }
+    &:nth-child(5) { left: calc(50% + 340px); }
+    &:nth-child(6) { left: calc(50% + 340px); }
+    &:nth-child(7) { left: calc(50% + 340px); }
+    &:nth-child(8) { left: calc(50% + 340px); }
+    &:nth-child(9) { left: calc(50% + 340px); }
+    &:nth-child(10) { left: calc(50% + 340px); }
+    &:nth-child(11) { left: calc(50% + 340px); }
+    &:nth-child(12) { left: calc(50% + 340px); }
+    &:nth-child(13) { left: calc(50% + 340px); }
+    &:nth-child(14) { left: calc(50% + 340px); }
+    &:nth-child(15) { left: calc(50% + 340px); }
+    &:nth-child(16) { left: calc(50% + 340px); }
+    &:nth-child(17) { left: calc(50% + 340px); }
+    &:nth-child(18) { left: calc(50% + 340px); }
+    &:nth-child(19) { left: calc(50% + 340px); }
+    &:nth-child(20) { left: calc(50% + 340px); }
+    &:nth-child(21) { left: calc(50% + 340px); }
+    &:nth-child(22) { left: calc(50% + 340px); }
+    &:nth-child(23) { left: calc(50% + 340px); }
+    &:nth-child(24) { left: calc(50% + 510px); opacity: 0; }
+  }
+}
+/**
+ * Define estilos para telas com largura menor que 650px.
+ * Reduz tamanhos de fonte para elementos .title, .description e botões dentro de .content.
+ * Ajusta largura e altura para elementos .item e define sua posição usando o seletor nth-child.
+ */
+
+
+@media (width < 650px) {
+  .content {
+    & .title        { font-size: 0.9rem; 
+      text-align:left;}
+    & .description  { font-size: 0.75rem; 
+      text-align:left;}
+    & button        { font-size: 0.9rem; }
+  }
+  .item {
+    width: 130px;
+    height: 220px;
+
+    &:nth-child(3) { left: 50%; }
+    &:nth-child(4) { left: calc(50% + 140px); }
+    &:nth-child(5) { left: calc(50% + 280px); }
+    &:nth-child(6) { left: calc(50% + 280px); }
+    &:nth-child(7) { left: calc(50% + 280px); }
+    &:nth-child(8) { left: calc(50% + 280px); }
+    &:nth-child(9) { left: calc(50% + 280px); }
+    &:nth-child(10) { left: calc(50% + 280px); }
+    &:nth-child(11) { left: calc(50% + 280px); }
+    &:nth-child(12) { left: calc(50% + 280px); }
+    &:nth-child(13) { left: calc(50% + 280px); }
+    &:nth-child(14) { left: calc(50% + 280px); }
+    &:nth-child(15) { left: calc(50% + 280px); }
+    &:nth-child(16) { left: calc(50% + 280px); }
+    &:nth-child(17) { left: calc(50% + 280px); }
+    &:nth-child(18) { left: calc(50% + 280px); }
+    &:nth-child(19) { left: calc(50% + 280px); }
+    &:nth-child(20) { left: calc(50% + 280px); }
+    &:nth-child(21) { left: calc(50% + 280px); }
+    &:nth-child(22) { left: calc(50% + 280px); }
+    &:nth-child(23) { left: calc(50% + 280px); }
+    &:nth-child(24) { left: calc(50% + 420px); opacity: 0; }
+  }
+
+  .btn {
+    padding: 2rem;
+  }
+}
